@@ -1,5 +1,6 @@
 import { MoveRight } from "lucide-react";
 import Card from "../Card/Card";
+import Link from "next/link";
 
 function PopularRecipes() {
   return (
@@ -9,7 +10,10 @@ function PopularRecipes() {
         <h2 className="text-6xl font-semibold">
           Popular <span className="text-[#FFA319]">Recipes</span> Today
         </h2>
-        <button className=" cursor-pointer flex items-center bg-black py-3 px-8 rounded-3xl text-white transition-all duration-300 group">
+        <Link
+          href="/recipes"
+          className=" cursor-pointer flex items-center bg-black py-3 px-8 rounded-3xl text-white transition-all duration-300 group"
+        >
           <span className="transition-all duration-300 group-hover:-translate-x-2">
             See More Recipes
           </span>
@@ -17,7 +21,7 @@ function PopularRecipes() {
             size={16}
             className="stroke-[2px] text-[#FFA319] opacity-0 transition-all duration-300 group-hover:opacity-100"
           />
-        </button>
+        </Link>
       </div>
       {/* Cards */}
       <div className="grid grid-cols-3 gap-12 mt-12">
