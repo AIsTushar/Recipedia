@@ -3,12 +3,25 @@
 import { motion } from "framer-motion";
 import { ChefHat } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Card() {
   return (
     <div className="relative cursor-pointer bg-gray-50 rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 h-[600px]">
       <div className="absolute inset-0 top-36 left-6 right-6  bottom-24 rounded-xl overflow-hidden transition-all duration-300 group-hover:top-0 group-hover:left-0 group-hover:right-0 group-hover:w-full group-hover:h-full">
         <Image src="/card.png" alt="card" className="object-cover" fill />
+      </div>
+      {/* Blur effect */}
+      <div className="absolute hidden group-hover:block top-0 left-0 right-0 h-2/3 overflow-hidden">
+        <div
+          className="absolute inset-0 w-full h-full bg-[#FFA319] opacity-60 blur-md rounded-t-3xl"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)",
+          }}
+        ></div>
       </div>
 
       <div className="relative z-10 h-full w-full p-6 flex flex-col gap-4 bg-opacity-40">
@@ -32,10 +45,15 @@ function Card() {
           </div>
         </div>
 
-        <button className="cursor-pointer flex items-center justify-between bg-black py-3 px-4 rounded-3xl text-white transition-all duration-300 mt-4">
-          <span className="transition-all duration-300">See More Recipes</span>
+        <Link
+          href="/recipe"
+          className="cursor-pointer flex items-center justify-between bg-black py-3 px-4 rounded-3xl text-white transition-all duration-300 mt-4"
+        >
+          <span className="transition-all duration-300">
+            See Complete Recipes
+          </span>
           <ChefHat className="bg-white text-black stroke-[1px] rounded-full group-hover:bg-[#FFA319] group-hover:text-white p-[2px]" />
-        </button>
+        </Link>
       </div>
     </div>
   );
