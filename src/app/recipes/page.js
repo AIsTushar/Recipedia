@@ -1,6 +1,5 @@
 import Card from "@/components/Card/Card";
 import CategoryCard from "@/components/Card/CategoryCard";
-import Image from "next/image";
 
 function page() {
   return (
